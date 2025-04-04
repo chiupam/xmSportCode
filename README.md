@@ -5,11 +5,12 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fchiupam%2FxmSportCode)
 
 ## 简介
-该项目包含一个简单的API代理服务，用于与华米运动API进行交互，部署到Vercel云平台。
+该项目包含一个简单的API代理服务，用于与华米运动API进行交互，部署到Vercel云平台。使用Node.js实现。
 
 ## 功能特点
 - 提供POST接口代理请求到华米API
 - 自动提取access token并返回
+- 使用Node.js + Express框架开发
 - 专为Vercel云平台设计
 - 享受Vercel的每月可重置免费请求次数
 
@@ -32,7 +33,7 @@
    ```
    - 在Vercel控制台中点击"Add New Project"
    - 选择"Import Git Repository"并选择您的xmSportCode仓库
-   - Vercel会自动识别Python项目并使用适当的构建设置
+   - Vercel会自动识别Node.js项目并使用适当的构建设置
 
 3. 部署设置
    - 在部署设置页面，保持默认设置即可
@@ -64,6 +65,26 @@
    ```
    vercel --prod
    ```
+
+## 本地开发
+1. 安装依赖
+   ```
+   npm install
+   ```
+
+2. 启动开发服务器
+   ```
+   npm run dev
+   ```
+   或
+   ```
+   npm start
+   ```
+
+3. 本地测试
+   ```
+   curl -X POST -d "phoneNumber=123456789&password=yourpassword" http://localhost:3000/api
+   ```
    
 ## 使用方法
 向API发送POST请求：
@@ -80,11 +101,11 @@ phoneNumber=123456789&password=yourpassword
 - password: 密码
 
 响应:
-- 成功: 直接返回access token字符串
-- 失败: 返回JSON格式错误信息
+- 成功: 返回JSON格式 `{"status": true, "code": "access_token"}`
+- 失败: 返回JSON格式 `{"status": false, "code": "错误信息"}`
 
 ## 故障排除
 - 如果部署失败，检查Vercel控制台中的构建日志
 - 如果需要查看应用日志，可以在Vercel控制台中的"Logs"标签查看
-- 确保您的GitHub仓库包含了所有必要的文件，包括vercel.json和requirements.txt
+- 确保您的GitHub仓库包含了所有必要的文件，包括vercel.json和package.json
 
