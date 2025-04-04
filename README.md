@@ -2,6 +2,8 @@
 
 这是一个运动相关的项目仓库。
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fchiupam%2FxmSportCode)
+
 ## 简介
 该项目包含一个简单的API代理服务，用于与华米运动API进行交互，部署到Vercel云平台。
 
@@ -12,6 +14,9 @@
 - 享受Vercel的每月可重置免费请求次数
 
 ## Vercel部署教程
+
+### 快速部署
+点击上方的 "Deploy with Vercel" 按钮，一键部署到您的Vercel账户。
 
 ### 方法一：通过网页界面部署
 1. 创建Vercel账号
